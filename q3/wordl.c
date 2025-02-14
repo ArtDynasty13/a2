@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
     current = WHITE;
     if (argc != 2) {
         fprintf(stderr, "Invalid number of command line arguments\n");
-      return 1;
+      return 0;
     }
     char *theWord = argv[1];  // Correct word
     char guess[12];
@@ -30,8 +30,8 @@ int main(int argc, char **argv) {
         scanf("%s", guess);
 
         if (strlen(guess) != strlen(theWord)) {
-            printf("Invalid guess, guess length must match word length\n");
-            break;
+            fprintf(stderr, "Invalid guess, guess length must match word length\n");
+            return 0;
         }
 
         int letter_count[ASCII_SIZE] = {0};  // Frequency of letters in theWord
