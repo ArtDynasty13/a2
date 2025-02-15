@@ -9,7 +9,7 @@ int roman(char c) {
     else if (c =='L') return 50;
     else if (c =='C') return 100;
     else if (c =='D') return 500;
-    else if (c =='M') return 10000;
+    else if (c =='M') return 1000;
     else { return 0; }
 }
 
@@ -37,5 +37,5 @@ int main() {
         after = getchar();
     }
     sum += roman(prev);
-    printf("%d\n", sum);
+    printf("%lld\n", sum);
 }
