@@ -21,7 +21,10 @@ int main() {
     if(c==EOF) return 0;
     prev = c;
     after = getchar();
-    if (after == EOF) printf("%d", roman(prev));
+    if (after == EOF) {
+        printf("%d\n", roman(prev));
+        return 0;
+    }
     while(after != EOF) {
         if(roman(after)==0) { //loop until we find another roman numeral
             after = getchar();
